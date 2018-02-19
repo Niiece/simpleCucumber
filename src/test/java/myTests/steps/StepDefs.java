@@ -1,13 +1,17 @@
 package myTests.steps;
 
 import common.Money;
-import common.MoneyTransformer;
-import common.ObjectHelper;
+import cucumber.api.Delimiter;
+import support.MoneyTransformer;
+import support.ObjectHelper;
 import common.Teller;
 import cucumber.api.Transform;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import support.TheEnumClass;
+
+import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
@@ -36,4 +40,16 @@ public class StepDefs {
         assertTrue(helper.getMyAccount().getBalance().equals(money));
         helper.getCashSlot().getContent().currentBalance();
     }
+    @Given("^sout delimited list '(.+)'$")
+    public void delimitedString(@Delimiter(" > ")List<String> list){
+        list.stream().forEach(System.out::println);
+    }
+
+    @Then("^get (selected|unselected) state from enum$")
+    public void getEnumState(TheEnumClass state){
+
+        System.out.println(state.getPhrase() + " : " + state.isTrue());
+    }
+
+
 }

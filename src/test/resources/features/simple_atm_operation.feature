@@ -5,3 +5,8 @@ Feature: Simple atm operations
     Given user ATM account with $100.20
     When user sends $20.40
     Then user will have $79.80 on account
+
+  Scenario: delimeter and list
+      Given sout delimited list 'one > two > three'
+      Then get selected state from enum
+      Then get unselected state from enum

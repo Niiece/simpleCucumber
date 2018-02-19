@@ -1,13 +1,11 @@
 package common;
 
-import com.sun.org.apache.regexp.internal.RE;
-
 public class Money {
     private int dollars;
     private int cents;
 
-    Money(){}
-    Money(int dollars, int cents){
+    public Money(){}
+    public Money(int dollars, int cents){
         this.dollars = dollars;
         this.cents = cents;
     }
