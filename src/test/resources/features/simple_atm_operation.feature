@@ -10,3 +10,6 @@ Feature: Simple atm operations
       Given sout delimited list 'one > two > three'
       Then get selected state from enum
       Then get unselected state from enum
+      Then check date 2018-06-12
+
+
